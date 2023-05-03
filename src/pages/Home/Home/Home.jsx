@@ -6,6 +6,7 @@ import ChefProfile from "../ChefProfile/ChefProfile";
 const Home = () => {
 	return (
 		<>
+			<h1 className="bg-primary">Login</h1>
 			<Banner></Banner>
 			<ChefProfile></ChefProfile>
 			{/* <Extra Section 1></Extra Section 1>
