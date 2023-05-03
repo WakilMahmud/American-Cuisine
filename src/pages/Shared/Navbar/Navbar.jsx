@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
 	const [isClick, setIsClick] = useState(true);
 	return (
-		<nav className="container shadow-lg sticky top-0">
+		<nav className="container shadow-lg sticky top-0 bg-white">
 			<div className="w-4/5 mx-auto px-4">
 				<div className="flex justify-between items-center py-4">
 					<Link to="/" className="font-extrabold text-xl">
