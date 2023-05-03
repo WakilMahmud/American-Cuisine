@@ -18,16 +18,17 @@ const Navbar = () => {
 						</svg>
 					</button>
 
-					<ul className={`${isClick ? "hidden" : ""} flex flex-col md:flex md:flex-row md:items-center md:gap-5`}>
+					<ul className={`${isClick ? "hidden" : ""} font-semibold flex flex-col md:flex md:flex-row md:items-center md:gap-8`}>
 						<NavLink to="/" className={({ isActive }) => (isActive ? "text-blue-500" : "")}>
 							Home
 						</NavLink>
 						<NavLink to="/blog" className={({ isActive }) => (isActive ? "text-blue-500" : "")}>
 							Blog
 						</NavLink>
-						<NavLink to="/login" className={({ isActive }) => (isActive ? "text-blue-500" : "")}>
-							Login
-						</NavLink>
+						<Link to="/login">
+							<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-xl">Login</button>
+						</Link>
+						{/* User Profile Pic */}
 					</ul>
 				</div>
 			</div>
