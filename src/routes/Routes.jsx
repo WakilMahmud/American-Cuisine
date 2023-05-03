@@ -6,6 +6,7 @@ import Register from "../pages/Login/Register/Register";
 import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import Blog from "../pages/Blog/Blog";
 import ChefRecipes from "../pages/ChefRecipes/ChefRecipes";
+import loadData from "../utilities/loadData";
 
 const router = createBrowserRouter([
 	{
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
 			{
 				path: "/recipes/:id",
 				element: <ChefRecipes></ChefRecipes>,
+				loader: ({ params }) => loadData(params.id),
 			},
 		],
 	},

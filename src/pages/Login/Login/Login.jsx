@@ -29,25 +29,29 @@ const Login = () => {
 						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 					/>
 				</div>
-				<button
-					type="submit"
-					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-				>
-					Login
-				</button>
+				<div className="w-full text-center">
+					<button
+						type="submit"
+						className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  px-4 w-64 rounded focus:outline-none focus:shadow-outline"
+					>
+						Login
+					</button>
+				</div>
 			</form>
 			<div className="mt-4">
 				<p className="text-gray-700">Or sign in with:</p>
-				<div className="flex mt-2">
-					<button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-2">Google</button>
-					<button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded">GitHub</button>
+				<div className="flex flex-col mt-2">
+					<button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-2 w-64">Google</button>
+					<button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded w-64">GitHub</button>
 				</div>
 			</div>
 			<div className="mt-4">
-				<p className="text-gray-700">Don&apos;t have an account?</p>
-				<Link to="/register" className="text-blue-500 hover:text-blue-700">
-					Sign up here.
-				</Link>
+				<p className="text-gray-700">
+					Don&apos;t have an account?
+					<Link to="/register" className="text-blue-500 underline hover:text-blue-700">
+						Register
+					</Link>
+				</p>
 			</div>
 		</div>
 	);
