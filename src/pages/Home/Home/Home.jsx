@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import BestDishesSection from "../BestDishesSection/BestDishesSection";
 import { useLoaderData } from "react-router-dom";
 import ChefProfiles from "../ChefProfile/ChefProfiles";
+import GetInTouch from "../GetInTouch/GetInTouch";
 
 const Home = () => {
 	const allChef = useLoaderData();
@@ -13,7 +14,7 @@ const Home = () => {
 			<Banner></Banner>
 			<ChefProfiles allChef={allChef}></ChefProfiles>
 			<BestDishesSection></BestDishesSection>
-			{/* Add more extra section */}
+			<GetInTouch></GetInTouch>
 		</>
 	);
 };
