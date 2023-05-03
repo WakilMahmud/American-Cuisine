@@ -9,7 +9,7 @@ const Navbar = () => {
 			<div className="w-4/5 mx-auto px-4">
 				<div className="flex justify-between items-center py-4">
 					<Link to="/" className="font-bold text-xl">
-						Cuisine Website
+						American Cuisine
 					</Link>
 					{/* Hamburger Menu */}
 					<button className="flex md:hidden focus:outline-none" onClick={() => setIsClick(!isClick)}>
