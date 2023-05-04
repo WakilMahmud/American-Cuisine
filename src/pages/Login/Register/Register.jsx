@@ -3,6 +3,8 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import toast from "react-hot-toast";
+import { getAuth, updateProfile } from "firebase/auth";
+const auth = getAuth();
 
 const Register = () => {
 	const [emailError, setEmailError] = useState("");
@@ -44,6 +46,20 @@ const Register = () => {
 				// createUser.disPlayName = name;
 				// createUser.photoURL = photo;
 				// console.log(createdUser);
+				updateProfile(auth.currentUser, {
+					displayName: name,
+					photoURL: photo,
+				})
+					.then(() => {
+						// Profile updated!
+						console.log("Profile updated");
+						// ...
+					})
+					.catch((error) => {
+						// An error occurred
+						// ...
+						console.log(error);
+					});
 			})
 			.catch((error) => {
 				console.log(error);
