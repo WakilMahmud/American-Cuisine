@@ -14,7 +14,7 @@ const Navbar = () => {
 			.catch((error) => console.log(error));
 	};
 	return (
-		<nav className="container shadow-lg sticky top-0 bg-white">
+		<nav className="container shadow-lg sticky top-0 bg-white z-10">
 			<div className="max-w-7xl mx-auto px-4">
 				<div className="flex justify-between items-center py-4">
 					<Link to="/" className="font-extrabold text-xl">
