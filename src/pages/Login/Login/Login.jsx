@@ -8,7 +8,7 @@ const Login = () => {
 	const [emailError, setEmailError] = useState("");
 	const [passwordError, setPasswordError] = useState("");
 
-	const { signIn } = useContext(AuthContext);
+	const { signIn, googleLogin } = useContext(AuthContext);
 	const navigate = useNavigate();
 	const location = useLocation();
 	// console.log("login page location", location);
@@ -51,6 +51,19 @@ const Login = () => {
 		form.password.value = "";
 	};
 
+	const handleGoogleLogin = () => {
+		// console.log("Clicked Google");
+		googleLogin()
+			.then((result) => {
+				// The signed-in user info.
+				const user = result.user;
+				console.log(user);
+				navigate(from, { replace: true });
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 	return (
 		<div className="flex flex-col items-center justify-center h-screen">
 			<h2 className="text-2xl font-bold mb-4">Login</h2>
@@ -91,7 +104,9 @@ const Login = () => {
 			<div className="mt-4">
 				<p className="text-gray-700">Or sign in with:</p>
 				<div className="flex flex-col mt-2">
-					<button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-2 w-64">Google</button>
+					<button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-2 w-64" onClick={handleGoogleLogin}>
+						Google
+					</button>
 					<button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded w-64">GitHub</button>
 				</div>
 			</div>

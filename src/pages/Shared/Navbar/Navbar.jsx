@@ -36,13 +36,9 @@ const Navbar = () => {
 						</NavLink>
 
 						{user && (
-							<div className="tooltip tooltip-bottom tooltip-primary" data-tip="User Name">
+							<div className="tooltip tooltip-bottom tooltip-primary" data-tip={user?.displayName}>
 								<button>
-									<img
-										className="w-8 h-8 rounded-full"
-										src="https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWFuJTIwZmFjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-										alt="User Profile"
-									/>
+									<img className="w-8 h-8 rounded-full" src={user?.photoURL} alt="User Profile" />
 								</button>
 							</div>
 						)}

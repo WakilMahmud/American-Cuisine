@@ -1,13 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { createContext } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { useEffect } from "react";
 import { useState } from "react";
-// import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 
+// eslint-disable-next-line react-refresh/only-export-components
 const auth = getAuth(app);
 
 // eslint-disable-next-line react/prop-types
@@ -15,7 +16,7 @@ const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(true);
 
-	// const googleProvider = new GoogleAuthProvider();
+	const googleProvider = new GoogleAuthProvider();
 
 	const createUser = (email, password) => {
 		setLoading(true);
@@ -27,15 +28,9 @@ const AuthProvider = ({ children }) => {
 		return signInWithEmailAndPassword(auth, email, password);
 	};
 
-	// signInWithPopup(auth, googleProvider)
-	// 	.then((result) => {
-	// 		// The signed-in user info.
-	// 		const user = result.user;
-	// 		console.log(user);
-	// 	})
-	// 	.catch((error) => {
-	// 		console.log(error);
-	// 	});
+	const googleLogin = () => {
+		return signInWithPopup(auth, googleProvider);
+	};
 
 	const logOut = () => {
 		setLoading(true);
@@ -59,6 +54,8 @@ const AuthProvider = ({ children }) => {
 		loading,
 		createUser,
 		signIn,
+		googleLogin,
+
 		logOut,
 	};
 

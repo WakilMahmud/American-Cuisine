@@ -41,25 +41,15 @@ const Register = () => {
 				const createdUser = result.user;
 				console.log(createdUser);
 				toast.success("Successfully Registered!");
+				// createUser.disPlayName = name;
+				// createUser.photoURL = photo;
+				// console.log(createdUser);
 			})
 			.catch((error) => {
 				console.log(error);
 				// toast.error(error.message);
 				toast.error("Email is already in use!");
 			});
-
-		// updateProfile(auth.currentUser, {
-		// 	displayName: "Jane Q. User",
-		// 	photoURL: "https://example.com/jane-q-user/profile.jpg",
-		// })
-		// 	.then(() => {
-		// 		// Profile updated!
-		// 		// ...
-		// 	})
-		// 	.catch((error) => {
-		// 		// An error occurred
-		// 		// ...
-		// 	});
 
 		form.name.value = "";
 		form.email.value = "";
