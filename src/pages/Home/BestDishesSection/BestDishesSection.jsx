@@ -3,7 +3,7 @@ import React from "react";
 
 const BestDishesSection = () => {
 	return (
-		<section className="bg-gray-100 py-16">
+		<section className="bg-gray-200 py-16">
 			<div className="max-w-7xl mx-auto px-4">
 				<h2 className="text-3xl font-bold mb-8 text-center">Best American Dishes</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

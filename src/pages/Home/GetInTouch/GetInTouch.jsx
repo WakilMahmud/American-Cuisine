@@ -13,13 +13,19 @@ const GetInTouch = () => {
 						If you have any questions or feedback about our American cuisine restaurant, please feel free to get in touch with us using the contact
 						information below:
 					</p>
-					<ul className="list-disc ml-8 mb-4">
-						<li>Phone: 555-1234</li>
-						<li>Email: info@americancuisine.com</li>
-						<li>Address: 123 Main Street, Anytown USA</li>
+					<ul className="list-disc ml-8 mb-8">
+						<li className="font-medium">
+							Phone: <span className="font-light">555-1234</span>
+						</li>
+						<li className="font-medium">
+							Email: <span className="font-light">info@americancuisine.com</span>
+						</li>
+						<li className="font-medium">
+							Address: <span className="font-light">123 Main Street, Anytown USA</span>
+						</li>
 					</ul>
 
-					<h2 className="text-xl font-bold mb-4">Opening Hours</h2>
+					<h2 className="text-xl font-bold mb-2">Opening Hours</h2>
 					<p className="mb-4">We&apos;re open every day from 11am to 9pm.</p>
 				</div>
 

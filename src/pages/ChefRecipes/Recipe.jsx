@@ -3,6 +3,9 @@
 import React, { useState } from "react";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { Rating } from "@smastrom/react-rating";
+
+import "@smastrom/react-rating/style.css";
 // eslint-disable-next-line react/prop-types
 const Recipe = ({ recipe }) => {
 	const [favorite, setFavorite] = useState(false);
@@ -24,41 +27,34 @@ const Recipe = ({ recipe }) => {
 				</div>
 				<div className="px-4 py-4">
 					<h3 className="text-lg font-medium text-gray-900">{name}</h3>
-					<p className="mt-4 text-gray-600 font-medium">Ingredients:</p>
-					<ul>
+					<p className="mt-4 text-gray-600 font-medium">
+						Ingredients:&nbsp;
 						{ingredients.map((i, idx) => {
 							// eslint-disable-next-line react/jsx-key
 							return (
-								<li key={idx} className="text-base text-gray-500 relative left-10 ">
-									{i}
-								</li>
+								<span key={idx} className="text-base font-light text-gray-500 ">
+									{i}. &nbsp;
+								</span>
 							);
 						})}
-					</ul>
+					</p>
 
 					<p className="mt-4 text-gray-600">
 						<span className="text-gray-600 font-medium">Method: </span>
 						{method}
 					</p>
 					<div className="mt-4 flex items-center text-sm text-gray-600 ">
-						<svg className="h-6 w-6 fill-current text-yellow-500 mr-1" viewBox="0 0 20 20">
-							<path
-								fillRule="evenodd"
-								d="M10 15.585l-5.16 3.159a1 1 0 01-1.47-1.054l1.28-5.62-4.28-3.708a1 1 0 01.554-1.706l5.94-.51L9.36 1.98a1 1 0 011.88 0l2.792 5.308 5.94.51a1 1 0 01.554 1.706l-4.28 3.708 1.28 5.62a1 1 0 01-1.47 1.054L10 15.585z"
-								clipRule="evenodd"
-							/>
-						</svg>
-						<span className="text-gray-600 font-medium">
-							Rating: <span className="text-orange-600 font-bold">{rating}</span>
-						</span>
+						<Rating style={{ maxWidth: 180 }} value={Math.round(rating)} readOnly />
+
+						<span className="text-orange-500 font-bold text-xl ml-4">{rating}</span>
 
 						{favorite ? (
-							<button className="ml-12" disabled onClick={handleFavoriteButton}>
-								<FaHeart fill="red"></FaHeart>
+							<button className="ml-32" disabled onClick={handleFavoriteButton}>
+								<FaHeart fill="red" size="2rem"></FaHeart>
 							</button>
 						) : (
-							<button className="ml-12" onClick={handleFavoriteButton}>
-								<FaRegHeart></FaRegHeart>
+							<button className="ml-32" onClick={handleFavoriteButton}>
+								<FaRegHeart size="2rem"></FaRegHeart>
 							</button>
 						)}
 					</div>
