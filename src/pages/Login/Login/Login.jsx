@@ -1,16 +1,65 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
+	const [emailError, setEmailError] = useState("");
+	const [passwordError, setPasswordError] = useState("");
+
+	const { signIn } = useContext(AuthContext);
+	// const navigate = useNavigate();
+	// const location = useLocation();
+	// console.log("login page location", location);
+	// const from = location.state?.from?.pathname || "/category/0";
+
+	const handleLogin = (event) => {
+		event.preventDefault();
+		const form = event.target;
+		const email = form.email.value;
+		const password = form.password.value;
+		console.log(email, password);
+
+		//Form validation
+		// Form validation
+		if (email === "") {
+			setEmailError("Please enter your email address.");
+			return;
+		} else {
+			setEmailError("");
+		}
+		if (password === "") {
+			setPasswordError("Please enter your password.");
+			return;
+		} else {
+			setPasswordError("");
+		}
+
+		signIn(email, password)
+			.then((result) => {
+				const loggedUser = result.user;
+				console.log(loggedUser);
+				// navigate(from, { replace: true });
+			})
+			.catch((error) => {
+				// console.log(error);
+				toast.error(error.message);
+			});
+
+		form.email.value = "";
+		form.password.value = "";
+	};
+
 	return (
 		<div className="flex flex-col items-center justify-center h-screen">
 			<h2 className="text-2xl font-bold mb-4">Login</h2>
-			<form className="w-full max-w-md">
+			<form className="w-full max-w-md" onSubmit={handleLogin}>
 				<div className="mb-4">
 					<label htmlFor="email" className="block text-gray-700 font-bold mb-2">
 						Email
 					</label>
+					{emailError && <p className="text-red-500 text-xs italic mt-2">{emailError}</p>}
 					<input
 						type="email"
 						id="email"
@@ -22,6 +71,7 @@ const Login = () => {
 					<label htmlFor="password" className="block text-gray-700 font-bold mb-2">
 						Password
 					</label>
+					{passwordError && <p className="text-red-500 text-xs italic mt-2">{passwordError}</p>}
 					<input
 						type="password"
 						id="password"
