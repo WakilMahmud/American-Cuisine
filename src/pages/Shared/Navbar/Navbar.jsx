@@ -1,9 +1,18 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
 	const [isClick, setIsClick] = useState(true);
+	const { user, logOut } = useContext(AuthContext);
+
+	const handleLogOut = () => {
+		logOut()
+			.then()
+			.catch((error) => console.log(error));
+	};
 	return (
 		<nav className="container shadow-lg sticky top-0 bg-white">
 			<div className="max-w-7xl mx-auto px-4">
@@ -25,9 +34,27 @@ const Navbar = () => {
 						<NavLink to="/blog" className={({ isActive }) => (isActive ? "text-blue-500" : "")}>
 							Blog
 						</NavLink>
-						<Link to="/login">
-							<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-xl">Login</button>
-						</Link>
+
+						{user && (
+							<div className="tooltip tooltip-bottom tooltip-primary" data-tip="User Name">
+								<button>
+									<img
+										className="w-8 h-8 rounded-full"
+										src="https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWFuJTIwZmFjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+										alt="User Profile"
+									/>
+								</button>
+							</div>
+						)}
+						{user ? (
+							<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-xl" onClick={handleLogOut}>
+								Logout
+							</button>
+						) : (
+							<Link to="/login">
+								<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-xl">Login</button>
+							</Link>
+						)}
 						{/* User Profile Pic */}
 					</ul>
 				</div>
