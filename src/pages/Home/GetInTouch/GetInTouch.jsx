@@ -3,8 +3,8 @@ import React from "react";
 
 const GetInTouch = () => {
 	return (
-		<div className="w-4/5 mx-auto py-16">
-			<h1 className="text-3xl font-bold mb-8 text-center">Get In Touch</h1>
+		<div className="w-4/5 mx-auto my-32">
+			<h1 className="text-3xl font-bold mb-16 text-center">Get In Touch</h1>
 
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 				<div>

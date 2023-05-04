@@ -54,7 +54,7 @@ const Recipe = ({ recipe }) => {
 
 						{favorite ? (
 							<button className="ml-12" disabled onClick={handleFavoriteButton}>
-								<FaHeart></FaHeart>
+								<FaHeart fill="red"></FaHeart>
 							</button>
 						) : (
 							<button className="ml-12" onClick={handleFavoriteButton}>
