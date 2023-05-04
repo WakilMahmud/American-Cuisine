@@ -43,9 +43,7 @@ const Register = () => {
 				const createdUser = result.user;
 				console.log(createdUser);
 				toast.success("Successfully Registered!");
-				// createUser.disPlayName = name;
-				// createUser.photoURL = photo;
-				// console.log(createdUser);
+
 				updateProfile(auth.currentUser, {
 					displayName: name,
 					photoURL: photo,

@@ -13,7 +13,7 @@ const ChefBanner = ({ allChef }) => {
 	const { picture, name, bio, years_of_experience, no_of_recipes, likes } = specificChef;
 	return (
 		<>
-			<div className="bg-white  overflow-hidden w-4/5 mx-auto my-32 flex flex-col md:flex-row justify-between items-center">
+			<div className="overflow-hidden w-4/5 mx-auto my-32 flex flex-col md:flex-row justify-between items-center">
 				<div className="w-full md:w-2/5">
 					<img src={picture} alt={name} className="h-96 w-full object-cover object-top  border rounded-lg" />
 				</div>

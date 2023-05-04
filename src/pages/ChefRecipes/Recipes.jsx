@@ -8,9 +8,9 @@ const Recipes = ({ recipes }) => {
 	// console.log(recipes);
 
 	return (
-		<div className="my-32">
-			<h1 className="font-bold text-center text-5xl mb-16">Chef&apos;s Recipe</h1>
-			<div className="grid grid-cols-1  gap-6">
+		<div className="pb-32 bg-gray-50">
+			<h1 className="font-bold text-center text-5xl py-16">Chef&apos;s Recipe</h1>
+			<div className="grid grid-cols-1  ">
 				{recipes.map((recipe) => (
 					<Recipe recipe={recipe} key={recipe.meal_id}></Recipe>
 				))}

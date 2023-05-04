@@ -6,6 +6,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
 	const [isClick, setIsClick] = useState(true);
+
 	const { user, logOut } = useContext(AuthContext);
 
 	const handleLogOut = () => {

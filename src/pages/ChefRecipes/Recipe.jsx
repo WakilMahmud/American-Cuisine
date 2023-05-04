@@ -21,11 +21,11 @@ const Recipe = ({ recipe }) => {
 
 	return (
 		<>
-			<div className="w-4/5 mx-auto bg-white overflow-hidden shadow rounded-lg ">
-				<div className="h-64 w-96 p-4 ">
+			<div className="w-4/5 mx-auto bg-white overflow-hidden shadow  flex flex-col md:flex-row gap-6  py-4 ">
+				<div className="h-64 w-full md:w-2/5 px-4">
 					<img className="w-full h-full object-cover rounded-lg" src={meal_pic} alt={name} />
 				</div>
-				<div className="px-4 py-4">
+				<div className="px-4 py-4 w-full md:w-1/2">
 					<h3 className="text-lg font-medium text-gray-900">{name}</h3>
 					<p className="mt-4 text-gray-600 font-medium">
 						Ingredients:&nbsp;
