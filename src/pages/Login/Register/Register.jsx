@@ -9,7 +9,7 @@ const auth = getAuth();
 const Register = () => {
 	const [emailError, setEmailError] = useState("");
 	const [passwordError, setPasswordError] = useState("");
-	const { createUser } = useContext(AuthContext);
+	const { createUser, logOut } = useContext(AuthContext);
 
 	const handleRegister = (event) => {
 		event.preventDefault();
@@ -43,6 +43,8 @@ const Register = () => {
 				const createdUser = result.user;
 				console.log(createdUser);
 				toast.success("Successfully Registered!");
+
+				logOut();
 
 				updateProfile(auth.currentUser, {
 					displayName: name,
