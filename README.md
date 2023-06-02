@@ -1,5 +1,3 @@
-# b7a10-chef-recipe-hunter-client-side-WakilMahmud
-
 # American Cuisine Website
 
 Welcome to the American Cuisine Website! Here, you'll find all the information you need about American food and chefs.
