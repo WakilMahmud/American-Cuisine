@@ -6,6 +6,9 @@ import { useLoaderData, useNavigation } from "react-router-dom";
 import ChefProfiles from "../ChefProfile/ChefProfiles";
 import GetInTouch from "../GetInTouch/GetInTouch";
 import Spinner from "../../Shared/Spinner/Spinner";
+import AboutUs from "../About Us/AboutUs";
+import Reservation from "../Reservation/Reservation";
+import NewsletterSignup from "../NewsletterSignup/NewsletterSignup";
 
 const Home = () => {
 	const navigation = useNavigation();
@@ -22,7 +25,10 @@ const Home = () => {
 			<Banner></Banner>
 			<ChefProfiles allChef={allChef}></ChefProfiles>
 			<BestDishesSection></BestDishesSection>
+			<AboutUs></AboutUs>
+			<Reservation></Reservation>
 			<GetInTouch></GetInTouch>
+			<NewsletterSignup></NewsletterSignup>
 		</>
 	);
 };
