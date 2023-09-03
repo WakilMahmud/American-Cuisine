@@ -9,6 +9,7 @@ import Spinner from "../../Shared/Spinner/Spinner";
 import AboutUs from "../About Us/AboutUs";
 import Reservation from "../Reservation/Reservation";
 import NewsletterSignup from "../NewsletterSignup/NewsletterSignup";
+import UserTestimonials from "../UserTestimonials/UserTestimonials";
 
 const Home = () => {
 	const navigation = useNavigation();
@@ -27,6 +28,7 @@ const Home = () => {
 			<BestDishesSection></BestDishesSection>
 			<AboutUs></AboutUs>
 			<Reservation></Reservation>
+			<UserTestimonials></UserTestimonials>
 			<GetInTouch></GetInTouch>
 			<NewsletterSignup></NewsletterSignup>
 		</>
